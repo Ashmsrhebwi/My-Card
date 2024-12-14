@@ -1,0 +1,280 @@
+/* =======================
+   تعريف الألوان - Renk Tanımlamaları
+   ======================= */
+   :root {
+    --dark-color: #19283f; /* اللون الداكن الذي يستخدم في الخلفيات - Koyu renk, arka plan için */
+    --green-color: #33d1cc; /* اللون الأخضر الذي يستخدم في التمييز - Yeşil renk, vurgulama için */
+    --red-color: #ff3150; /* اللون الأحمر الذي يستخدم في الأزرار أو التنبيهات - Kırmızı renk, butonlar ve uyarılar için */
+    --yellow-color: #ffc400; /* اللون الأصفر الذي يستخدم للنصوص البارزة - Sarı renk, dikkat çekici metinler için */
+    --section-color: #eff7fa; /* اللون الفاتح الذي يستخدم للخلفيات في الأقسام - Açık renk, bölümlerin arka planı için */
+}
+
+/* =======================
+   إعدادات عامة - Genel Ayarlar
+   ======================= */
+* {
+    box-sizing: border-box; /* هذا يضمن أن يتم حساب الحشوة والحدود ضمن الأبعاد الكلية للعنصر - Bu, öğelerin iç boşluk ve kenarlıklarının toplam boyutla hesaplanmasını sağlar. */
+}
+
+/* =======================
+   إعدادات الجسم (Body) - Gövde Ayarları
+   ======================= */
+body {
+    font-family: 'Roboto', sans-serif; /* تعيين الخط الأساسي للموقع - Site için temel fontu ayarlıyoruz */
+}
+
+/* =======================
+   أزرار الموقع (Main Button) - Ana Buton
+   ======================= */
+.main-btn {
+    background-color: var(--red-color); /* تعيين الخلفية باللون الأحمر - Arka planı kırmızı renge ayarlıyoruz */
+    color: var(--yellow-color); /* تعيين النص باللون الأصفر - Metin rengini sarıya ayarlıyoruz */
+    padding: 0.5rem 1rem; /* إضافة الحشو للأزرار - Butonlara iç boşluk ekliyoruz */
+}
+
+.main-btn:hover {
+    color: var(--yellow-color); /* تغيير لون النص عند المرور على الزر - Buton üzerine gelindiğinde metin rengini değiştir */
+}
+
+/* =======================
+   قسم Navbar - Navigasyon Barı
+   ======================= */
+.navbar {
+    background-color: var(--dark-color); /* تعيين خلفية شريط التنقل باللون الداكن - Navigasyon barının arka planını koyu renk yapıyoruz */
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #fff; /* تعيين اللون الأبيض لرابط التنقل - Navigasyon linklerini beyaz renge ayarlıyoruz */
+}
+
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link:hover {
+    color: var(--green-color); /* تغيير اللون عند التركيز أو المرور - Focus veya hover durumunda renk değiştiriyoruz */
+}
+
+.navbar .search {
+    border-left: 1px solid var(--green-color); /* إضافة حد على اليسار مع اللون الأخضر - Sol kenara yeşil renkli kenarlık ekliyoruz */
+    margin-right: 10px; /* إضافة هامش على اليمين - Sağ tarafa 10px boşluk ekliyoruz */
+}
+
+.navbar .search svg {
+    color: var(--green-color); /* تغيير لون أيقونة البحث إلى اللون الأخضر - Arama ikonunun rengini yeşile ayarlıyoruz */
+}
+
+.navbar .navbar-toggler {
+    color: #fff; /* تعيين اللون الأبيض للزر الذي يفتح القائمة - Menü açma butonunun rengini beyaz yapıyoruz */
+    font-size: 25px; /* تعيين حجم الخط - Yazı boyutunu 25px olarak ayarlıyoruz */
+    border-color: #fff; /* تعيين اللون الأبيض للحدود - Kenarlık rengini beyaz yapıyoruz */
+}
+
+.navbar .navbar-toggler:focus {
+    box-shadow: none; /* إزالة الظل عند التركيز على الزر - Buton odaklandığında gölgeyi kaldırıyoruz */
+}
+
+.navbar .navbar-toggler[aria-expanded="true"] {
+    border-color: var(--green-color); /* تغيير لون الحدود عند توسيع القائمة - Menü açıldığında kenarlık rengini yeşile ayarlıyoruz */
+}
+
+.navbar-nav .nav-item .active {
+    color: #ff6347; /* تعيين اللون النشط للروابط - Aktif linkin rengini kırmızı yapıyoruz */
+    font-weight: bold; /* تعيين الخط عريض عند النقر - Link üzerine tıklandığında fontu kalın yapıyoruz */
+}
+
+/* =======================
+   قسم Landing - Landing Bölümü
+   ======================= */
+.landing {
+    background-color: var(--dark-color); /* تعيين خلفية القسم باللون الداكن - Bu bölümün arka planını koyu renge ayarlıyoruz */
+    min-height: calc(100vh - 72px); /* تعيين الحد الأدنى للارتفاع ليأخذ كامل الشاشة مع إزالة ارتفاع شريط التنقل - Minimum yükseklik, ekranın tamamını kaplayacak şekilde ayarlanır */
+}
+
+/* =======================
+   قسم Features - Özellikler Bölümü
+   ======================= */
+.main-title::after {
+    content: ''; /* إنشاء خط بعد العنوان - Başlığın altına bir çizgi ekliyoruz */
+    position: absolute;
+    width: 120px; /* تعيين عرض الخط - Çizginin genişliğini ayarlıyoruz */
+    height: 2px; /* تعيين سمك الخط - Çizginin kalınlığını ayarlıyoruz */
+    background-color: var(--green-color); /* تعيين اللون الأخضر للخط - Çizginin rengini yeşil yapıyoruz */
+    bottom: -20px; /* تعيين المسافة السفلية - Alt mesafeyi ayarlıyoruz */
+    left: 50%; /* محاذاة الخط إلى المنتصف - Çizgiyi yatayda ortalıyoruz */
+    transform: translateX(-50%); /* تحريك الخط ليكون في المنتصف تمامًا - Çizgiyi tam ortalamak için kaydırıyoruz */
+}
+
+.features .icon-holder {
+    right: 40px;
+
+    height: 200px; /* تعيين ارتفاع حاوية الأيقونات - İkon konteynırının yüksekliğini 200px yapıyoruz */
+}
+
+.features .icon-holder svg {
+    left: 50%; /* محاذاة الأيقونة إلى المنتصف - İkonu yatayda ortalıyoruz */
+    transform: translateX(-50%); /* التأكد من أنها في المنتصف تمامًا - İkonun tam ortada olmasını sağlıyoruz */
+}
+
+.features .icon-holder .number {
+    font-size: 12rem; /* تعيين حجم الرقم - Sayı font boyutunu 12rem olarak ayarlıyoruz */
+    color: var(--section-color); /* تعيين اللون الفاتح للأرقام - Sayıların rengini açık renge ayarlıyoruz */
+}
+
+.features .icon-holder .icon {
+    color: var(--green-color); /* تعيين اللون الأخضر للأيقونات - İkonların rengini yeşil yapıyoruz */
+}
+
+.features .feat h4 {
+    color: var(--yellow-color); /* تعيين اللون الأصفر للعناوين الفرعية - Alt başlıkların rengini sarıya ayarlıyoruz */
+}
+
+/* =======================
+   قسم Our Work - Çalışmalarımız Bölümü
+   ======================= */
+.our-work {
+    background-color: var(--section-color); /* تعيين خلفية القسم باللون الفاتح - Bu bölümün arka planını açık renge ayarlıyoruz */
+}
+
+.our-work ul .active {
+    background-color: var(--red-color); /* تعيين الخلفية باللون الأحمر للمحتوى النشط - Aktif öğenin arka planını kırmızı yapıyoruz */
+    color: var(--yellow-color); /* تعيين النص باللون الأصفر - Metin rengini sarıya ayarlıyoruz */
+}
+
+.our-work ul li {
+    padding: 0.5rem 1rem; /* إضافة حشوة داخل العناصر - Liste öğelerine iç boşluk ekliyoruz */
+    cursor: pointer; /* تغيير المؤشر إلى شكل اليد عند المرور - Üzerine gelindiğinde imleci parmak yapıyoruz */
+    transition: .3s; /* إضافة انتقال ناعم عند التغيير - Değişimlere yumuşak geçiş ekliyoruz */
+}
+
+.our-work ul li:not(.active):hover {
+    color: var(--red-color); /* تغيير اللون عند المرور على العنصر غير النشط - Aktif olmayan öğe üzerine gelindiğinde rengini kırmızıya değiştiriyoruz */
+}
+
+.our-work .box {
+    padding: 5px; /* إضافة حشوة داخل الصندوق - Kutuya iç boşluk ekliyoruz */
+    overflow: hidden; /* إخفاء العناصر الزائدة - Aşan öğeleri gizliyoruz */
+    position: relative; /* تعيين موقع النسبي للصندوق - Kutuyu göreli konumlandırıyoruz */
+}
+
+.our-work .box::before {
+    content: attr(data-work); /* إضافة محتوى تفاعلي بناءً على البيانات - Veri içeriklerine dayalı etkileşimli içerik ekliyoruz */
+    position: absolute;
+    background-color: rgb(51 209 204 / 76%); /* تعيين الخلفية بلون شفاف - Şeffaf arka plan rengini ayarlıyoruz */
+    width: calc(100% - 10px); /* تعيين العرض - Genişliği 10px azaltıyoruz */
+    height: calc(100% - 10px); /* تعيين الارتفاع - Yüksekliği 10px azaltıyoruz */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #fff;
+    transition: .3s;
+    font-size: 1.8rem;
+    transform: translateX(calc(-100% - 5px)); /* إخفاء المحتوى في البداية - İçeriği başlangıçta gizliyoruz */
+}
+
+.our-work .box:hover::before {
+    transform: translateX(0); /* إظهار المحتوى عند التمرير - Üzerine gelindiğinde içeriği gösteriyoruz */
+}
+
+/* =======================
+   قسم Subscribe - Abone Ol Bölümü
+   ======================= */
+.subscribe {
+    background-color: var(--yellow-color); /* تعيين خلفية القسم باللون الأصفر - Bu bölümün arka planını sarı yapıyoruz */
+}
+
+.subscribe input[type="text"] {
+    border: none;
+    border-bottom: 1px solid white; /* إضافة حد أسفل المدخل - Giriş kutusunun altına beyaz kenarlık ekliyoruz */
+    background: none; /* إزالة الخلفية - Arka planı kaldırıyoruz */
+}
+
+.subscribe input[type="text"]:focus {
+    outline: none; /* إزالة الحدود عند التركيز - Giriş kutusuna odaklanıldığında kenarlıkları kaldırıyoruz */
+}
+
+.subscribe ::placeholder {
+    color: white; /* تعيين اللون الأبيض للنص الافتراضي - Varsayılan metin rengini beyaz yapıyoruz */
+}
+
+.subscribe input[type="submit"] {
+    background-color: var(--dark-color); /* تعيين الخلفية باللون الداكن للزر - Gönder butonunun arka planını koyu renge ayarlıyoruz */
+    color: var(--yellow-color); /* تعيين اللون الأصفر للنص - Metin rengini sarıya ayarlıyoruz */
+}
+
+/* =======================
+   قسم Footer - Alt Bilgi Bölümü
+   ======================= */
+.footer {
+    background-color: var(--dark-color); /* تعيين الخلفية باللون الداكن - Bu bölümün arka planını koyu renge ayarlıyoruz */
+}
+
+.footer .copyright > span {
+    color: var(--green-color); /* تعيين اللون الأخضر لحقوق الطبع والنشر - Telif hakkı yazısının rengini yeşil yapıyoruz */
+}
+
+.footer .copyright div span {
+    color: var(--yellow-color); /* تعيين اللون الأصفر للمحتوى الفرعي - Alt yazıların rengini sarıya ayarlıyoruz */
+}
+
+
+
+.footer .facebook {
+    background-color: #1877f2; /* تعيين اللون الأزرق الفاتح لفيسبوك - Facebook için mavi arka plan rengi */
+}
+
+.footer .twitter {
+    background-color: #1da1f2; /* تعيين اللون الأزرق الداكن لتويتر - Twitter için koyu mavi arka plan rengi */
+}
+
+.footer .linkedin {
+    background-color: #0077b5; /* تعيين اللون الأزرق الداكن لينكدإن - LinkedIn için koyu mavi arka plan rengi */
+}
+
+.footer .youtube {
+    background-color: #ff0000; /* تعيين اللون الأحمر ليوتيوب - YouTube için kırmızı arka plan rengi */
+}
+
+
+/* =======================
+   قسم Contact - İletişim Bölümü
+   ======================= */
+.form-control {
+    border-radius: 10px; /* تعيين الزوايا المدورة للحقول - Alanlara yuvarlak köşeler ekliyoruz */
+    font-size: 16px; /* تعيين حجم الخط - Font boyutunu 16px olarak ayarlıyoruz */
+}
+
+.btn-dark {
+    background-color: #343a40; /* تعيين اللون الداكن للزر - Buton arka planını koyu gri yapıyoruz */
+    border: none;
+}
+
+.btn-dark:hover {
+    background-color: #23272b; /* تغيير اللون عند المرور بالفأرة - Buton üzerine gelindiğinde koyu griye dönüyor */
+}
+
+.contactt {
+    background-image: url("E:/Shahm/Programming/MyProjectUnıversity/my-app/public/images/contact-us.webp"); /* تعيين صورة خلفية - Arka plan resmi belirliyoruz */
+    background-size: cover; /* جعل الصورة تغطي كامل الخلفية - Resmin arka planı tamamen kaplamasını sağlıyoruz */
+    background-position: center; /* تمركز الصورة في الوسط - Resmi ortalıyoruz */
+    background-repeat: no-repeat; /* عدم تكرار الصورة - Resmin tekrarını engelliyoruz */
+    padding-top: 60px; /* إضافة حشو في الأعلى - Üstten 60px iç boşluk ekliyoruz */
+    padding-bottom: 60px; /* إضافة حشو في الأسفل - Alttan 60px iç boşluk ekliyoruz */
+    position: relative; /* تعيين موقع النسبي للصندوق - Konumunu göreli yapıyoruz */
+    color: white; /* تعيين اللون الأبيض للنص - Metin rengini beyaz yapıyoruz */
+}
+
+.contact form {
+    background-color: rgba(0, 0, 0, 0.5); /* تعيين خلفية داكنة شفافة للنموذج - Formu şeffaf koyu arka planla ayarlıyoruz */
+    padding: 30px; /* إضافة حشو داخل النموذج - Form içerisine 30px iç boşluk ekliyoruz */
+    border-radius: 10px; /* تعيين الزوايا المدورة للنموذج - Formun köşelerini yuvarlıyoruz */
+}
+
+.contact h2 {
+    font-size: 2rem; /* تعيين حجم الخط - Başlık boyutunu 2rem olarak ayarlıyoruz */
+    font-weight: bold; /* تعيين الخط عريض - Başlığı kalın yapıyoruz */
+    color: white; /* تعيين النص باللون الأبيض - Başlık rengini beyaz yapıyoruz */
+}
+
+.contact .form-control {
+    background-color: rgba(255, 255, 255, 0.2); /* تعيين خلفية داكنة شفافة للحقول - Form alanları için şeffaf beyaz arka plan ayarlıyoruz */
+}
